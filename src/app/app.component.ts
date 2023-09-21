@@ -24,7 +24,7 @@ this.faceSnaps = [
     title: 'Me and my Best Friend',
     description: 'Sniper',
     createdDate: new Date(),
-    snaps: 1000,
+    snaps: 200,
     imageUrl: 'https://i.redd.it/do5vcaf9wpma1.jpg',
     localtion: ''},
       {
@@ -32,7 +32,7 @@ this.faceSnaps = [
       description : 'Oncle Dana',
       imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4nsiY9NeExhWwvxIxalZqCWXlAwgA0sJPYQ&usqp=CAU',
       createdDate : new Date(),
-       snaps : 0
+       snaps : 100
  }
 
 ];   }
