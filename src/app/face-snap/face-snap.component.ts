@@ -1,4 +1,5 @@
-import { Component , OnInit} from '@angular/core';
+import { Component ,OnInit ,Input} from '@angular/core';
+import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
   selector: 'app-face-snap',
@@ -6,21 +7,24 @@ import { Component , OnInit} from '@angular/core';
   styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent implements OnInit {
-  title! : string;
-  description!: string;
-  createdDate!: Date;
-  snaps!: number;
-  imageUrl!:string;
+  @Input() faceSnap!: FaceSnap;
+  buttonText!: string;
 
   ngOnInit(): void {
-      this.title = 'HOOOOO UN GATEEEEE';
-      this.description = 'Sch';
-      this.createdDate = new Date();
-      this.snaps = 6;
-      this.imageUrl = 'https://nypost.com/wp-content/uploads/sites/2/2023/03/NYPICHPDPICT000008985559.jpg'
+      this.buttonText= "1gatéééé!"
   }
 
-  onAddSnap() {
-    this.snaps++;
+  onSnap() {
+    if (this.buttonText === '1gatéééé!') {
+      this.faceSnap.snaps++;
+      this.buttonText = 'Pas de gaté 😞';
+    } else {
+      this.faceSnap.snaps--;
+      this.buttonText = '1gatéééé!';
+    }
+    
   }
+
+
+  
 }
