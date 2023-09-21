@@ -1,16 +1,18 @@
 export class FaceSnap {
-    // title : string;
-    // description: string;
-    // createdDate: Date;
-    // snaps: number;
-    // imageUrl:string;
+    title!: string;
+    description!: string;
+    createdDate!: Date;
+    snaps!: number;
+    imageUrl!:string;
+    localtion?: string;
 
 
-    constructor(public title: string,
-                public description: string,
-                public  imageUrl: string,
-                public createdDate: Date,
-                public  snaps: number ){
+    // constructor(public title: string,
+    //             public description: string,
+    //             public  imageUrl: string,
+    //             public createdDate: Date,
+    //             public  snaps: number ){
+  
     //   this.title= title;
     //   this.description= description;
     //   this.imageUrl= imageUrl;
@@ -18,4 +20,4 @@ export class FaceSnap {
     //   this.snaps= snaps;
 
     }
-}
+// }
