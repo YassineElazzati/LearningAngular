@@ -10,6 +10,7 @@ export class FaceSnapsService{
 
     faceSnaps: FaceSnap[] = [
         {
+    id : 1,
     title: 'Me With Oncle Mike',
     description: 'Training Hard ',
     createdDate: new Date(),
@@ -18,6 +19,7 @@ export class FaceSnapsService{
     localtion: 'Las Vegas, Nevada'
       } ,
         {  
+     id : 2,
     title: 'Me and my Best Friend',
     description: 'Sniper',
     createdDate: new Date(),
@@ -25,11 +27,12 @@ export class FaceSnapsService{
     imageUrl: 'https://i.redd.it/do5vcaf9wpma1.jpg',
     localtion: ''},
       {
-      title: 'HOOOOO UN GATEEEEE', 
-      description : 'Oncle Dana',
-      imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4nsiY9NeExhWwvxIxalZqCWXlAwgA0sJPYQ&usqp=CAU',
-      createdDate : new Date(),
-       snaps : 100
+    id : 3,
+    title: 'HOOOOO UN GATEEEEE', 
+    description : 'Oncle Dana',
+    imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4nsiY9NeExhWwvxIxalZqCWXlAwgA0sJPYQ&usqp=CAU',
+    createdDate : new Date(),
+    snaps : 100
   }
   
   ];
@@ -38,5 +41,20 @@ export class FaceSnapsService{
     return this.faceSnaps;
   }
 
+
+    getFaceSnapById(faceSnapId: number): FaceSnap{
+      const faceSnap = this.faceSnaps.find(faceSnap => faceSnap.id ===  faceSnapId);
+      if(!faceSnap){
+        throw new Error('FaceSnap not found');
+    }else{
+      return faceSnap;
+    }
+  }
+
+
+    snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): void{
+      const faceSnap = this.getFaceSnapById(faceSnapId);
+      snapType === 'snap'? faceSnap.snaps++ : faceSnap.snaps--;
+    }
 
 }
